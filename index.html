@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Log all the things!</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="author" content="Moritz Heiber">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -43,36 +43,81 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
-					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
-					</p>
+					<h1 class="first">Log the things!</h1>
+					<h3 class="first">Event-basierende, effiziente und skalierbare Datenaggregation mit fluentd</h3>
+        <aside class="notes" data-markdown>
+          - Herzlich Willkommen!
+          - Dachte ich erspare euch das übliche Meme
+          - Es gibt allerdings einen Vortrag, bei dem für jeden was dabei ist:
+            - Ein Business case
+            - Daten!
+            - Eine subjektive Sicht auf die Dinge
+            - Live-Demos
+            - Puppies und Kittens!
+            - Hoffentlich ein Takeaway
+        </aside>
 				</section>
-
-				<section>
-					<h2>Heads Up</h2>
-					<p>
-						reveal.js is a framework for easily creating beautiful presentations using HTML. You'll need a browser with
-						support for CSS 3D transforms to see it in its full glory.
-					</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<!-- Example of nested vertical slides -->
+        <section>
+          <section>
+            <h1>Worum geht es hier eigentlich?</h1>
+            <aside class="notes" data-markdown>
+              - Egal wo wir arbeiten, wir leben von Daten
+              - Daten über unsere Nutzer, Daten über unsere Produkte, Daten über Verarbeitung, persönliche Daten und öffentliche Daten
+              - Diese Daten werden meist durch Fremdfirmen erhoben, zumindest im großen Stil:
+                - Google Analytics
+                - Unzählige Trackingprovider, SEO Analytics, Crash-Reporting Tools (Airbrake, Crashlytics)
+                - DevOps/SysOps monitoring
+                  - Wichtig!
+              - Es gibt eine ganze Industrie, die von unserem Datenhunger lebt
+            </aside>
+          </section>
+          <section>
+            <h1>Was machen wir mit all dem Zeug?</h1>
+            <aside class="notes" data-markdown>
+              - Wohin mit all diesen Daten? Was machen wir damit?
+              - Beispiele:
+                - Produktoptimierung
+                - Frontendanpassungen wie z.B. Checkout-/Funneloptimierung
+                - Debugging
+                - Business-Vorhersagen
+                - Date-Warehousing/BI
+                - Div. andere Metriken
+          </section>
+          <section>
+            <h1>Zu was sollte uns das idealerweise führen?</h1>
+            <aside class="notes" data-markdown>
+              - Entscheidungen, die nicht auf Bauchgefühlen basieren
+                - Bauchgefühle sind wichtig und richtig, gerade am Anfang
+                - Bauchgefühle sind zuverlässig, wenn man Erfahrung hat
+                - Bauchgefühle können aber nicht komplexe Systeme durchdringen!
+              - Irgendwann muss man seine Entscheidungen, zum wohle der Firma und auch seiner Angestellten, auf Fakten basieren
+              - Und das mündet idealerweise in ...
+          </section>
+          <section>
+            <h1>Data Driven Products!</h1>
+            <aside class="notes" data-markdown>
+              - Entwicklung einer Firma basierend auf deterministischen Fakten und überprüfbaren Daten und nicht auf Bauchgefühl oder Ego
+                - Bauchgefühl ist immer noch wichtig, aber nur als Entscheidung in kritischen Bereichen, in denen Daten nicht nach beiden Seiten ausschlagen
+              - Management Buy-Ins werden leichter
+                - Niemand kann so einfach gegen Zahlen und Fakten argumentieren
+              - Zielgerichte Entwicklung, sowohl von Software als auch der Business-Seite, spart Zeit und damit Geld, außerdem Nerven, Lebensjahre und hilft durch klare Ziele Angestellte, und vor allem Entwickler, glücklich zu machen
+          </section>
+          <section>
+            <h1>Einfacher gesagt als getan</h1>
+            <aside class="notes" data-markdown>
+              - Daten müssen gesammelt, ausgewertet und anschließend präsentiert werden
+              - Verbindungen müssen transparent sein
+                - Einzelne Datenpakete für sich gesehen machen kein Modell aus, an dem man seine Entscheidungen ausrichten kann
+              - Man kann nicht auf alles eine Antwort geben, aber zumindest auf ein paar der Anforderungen will ich heute eine Antwort geben
+                - Besonders in Richtung Daten sammeln, zusammenführen und visualisieren
+            </aside>
+          </section>
+        </section>
 				<section>
 					<section>
-						<h2>Vertical Slides</h2>
-						<p>
-							Slides can be nested inside of other slides,
-							try pressing <a href="#" class="navigate-down">down</a>.
-						</p>
-						<a href="#" class="image navigate-down">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
+            <h1>Was ist fluentd?</h1>
+            <aside class="notes" data-markdown>
+              - Was genau ist also fluentd und wie kann es uns dabei helfen Data Driven Products zu entwickeln?
 					</section>
 					<section>
 						<h2>Basement Level 1</h2>
@@ -370,7 +415,7 @@ function linkify( selector ) {
 				history: true,
 				center: true,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				theme: 'night', // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
