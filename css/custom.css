@@ -1,0 +1,282 @@
+@font-face {
+	font-family: 'Entypo';
+	src: url('/fonts/entypo.eot');
+	src: local("Entypo"),
+		 url('/fonts/entypo.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/entypo.woff') format('woff'),
+		 url('/fonts/entypo.ttf') format('truetype'),
+		 url('/fonts/entypo.svg') format('svg');
+}
+
+@font-face {
+	font-family: 'Entypo Social';
+	src: url('/fonts/entypo-social.eot');
+	src: local("Entypo Social"),
+		 url('/fonts/entypo-social.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/entypo-social.woff') format('woff'),
+		 url('/fonts/entypo-social.ttf') format('truetype'),
+		 url('/fonts/entypo-social.svg') format('svg');
+}
+
+
+.reveal .footer {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  font-size: 0.5em;
+}
+
+/* Embedded items: */
+iframe
+{
+	width: 100%;
+	min-height: 600px;
+}
+
+
+
+
+/* Code: */
+.reveal .code-block
+{
+	position: relative;
+	margin: 2em 0.5em;
+}
+
+.reveal code
+{
+	font-family: 'Droid Sans Mono';
+}
+
+.reveal pre
+{
+	margin-bottom: 3em;
+}
+
+.reveal pre code
+{
+	tab-size: 4;
+	border-radius: 4px;
+	padding: 1.5em;
+	font-family: 'Droid Sans Mono';
+	font-size: 16pt;
+	line-height: 1.3em;
+	/* background: #030303;
+}
+
+.reveal .big-code
+{
+	box-shadow: none;
+}
+
+.reveal .big-code code
+{
+	text-align: center;
+	font-size: 50px;
+	background: none;
+}
+
+
+
+/* Section intros: */
+.section-intro h1
+{
+	font-size: 135px;
+}
+
+
+
+
+/* Quotes */
+.reveal blockquote
+{
+	padding: 1em;
+	border-radius: 15px;
+	text-align: left;
+	font-size: 18pt;
+}
+
+.reveal blockquote footer
+{
+	margin-top: 1em;
+	font-size: 14pt;
+}
+
+
+
+
+/* Results */
+.reveal .big-number
+{
+	font-size: 140px;
+	color: #ff2c2d;
+}
+
+.reveal .medium-number
+{
+	font-size: 100px;
+}
+
+.reveal .results
+{
+	color: #2e2e2e;
+	margin: 2em;
+	padding: 0.5em 1em;
+	background: #dfdfb6;
+}
+
+.reveal .results pre
+{
+	display: block;
+	margin: 0.5em 0;
+	font-size: 1em;
+	font-family: 'Droid Sans Mono';
+	box-shadow: none;
+}
+
+
+
+
+
+/* Images */
+.reveal section img {
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+
+
+
+/* Colored sections */
+.reveal .performance h2 {
+	color: #db3d28;
+}
+.reveal .pitfalls h2 {
+	color: #28c8db;
+}
+.reveal .tools h2 {
+	color: #28db63;
+}
+
+
+
+/* Specific slide tricks */
+.reveal .code-swap {
+	position: absolute;
+	top: 47px;
+	left: 0;
+	right: 0;
+}
+
+.reveal .fairy {
+	position: absolute;
+	left: 163px;
+	top: -40px;
+}
+
+.reveal .pw-name-bubble {
+	border-radius: 10px;
+	background: rgba(0, 0, 255, .5);
+	font-family: 'Droid Sans Mono';
+	text-align: left;
+	padding: 0.3em;
+	border: 3px solid rgba(0, 0, 0, .5);
+	font-size: 18pt;
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+	width: 110px;
+	z-index: 1;
+	position: relative;
+	margin-bottom: -3px;
+	display: block;
+}
+
+.reveal .pw-bubble {
+	border-radius: 10px;
+	background: rgba(0, 0, 0, .6);
+	font-family: 'Arial';
+	font-weight: bold;
+	text-align: left;
+	padding: 1em;
+	border: 3px solid rgba(0, 0, 0, .3);
+	border-top-left-radius: 0;
+}
+
+.reveal .pw-bubble .thought {
+	color: #6CBEFF;
+}
+
+.reveal table {
+	margin: 2em auto 1em auto;
+	border-spacing: 0;
+	border-collapse: collapse;
+	background: #DDD;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, .5);
+	color: #2e2e2e;
+	display: inline-block;
+	padding: 1em;
+}
+
+.reveal table td,
+.reveal table th {
+	border-top: 1px solid rgba(0, 0, 0, .5);
+	border-bottom: 1px solid rgba(0, 0, 0, .5);
+	padding: 0.25em 0.5em;
+}
+.reveal table th {
+	border: none;
+}
+.reveal table td:last-child
+{
+	border-left: 1px solid rgba(0, 0, 0, .5);
+}
+.reveal table tr:last-child td {
+	border-bottom: none;
+}
+
+.reveal .social {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	text-align: center;
+}
+.reveal .social li {
+	list-style-type: none;
+	text-align: center;
+	display: inline-block;
+	padding: 1em;
+  font-size: 1.5em;
+}
+
+.reveal .social li .social-icon {
+	font-size: 120pt;
+	font-family: "Entypo Social";
+}
+.reveal .social li .icon {
+	font-size: 120pt;
+	font-family: "Entypo";
+}
+.reveal .social li a {
+	display: block;
+}
+.reveal .social .blog {
+	color: #db3d28;
+}
+.reveal .social .twitter {
+	color: #28c8db;
+}
+.reveal .social .github {
+	color: #28db63;
+}
+
+#snarky small:last-child {
+	display: block;
+}
+
+
+
+/* Other */
+.reveal small {
+	font-size: .7em;
+}

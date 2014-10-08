@@ -17,6 +17,9 @@
 		<link rel="stylesheet" href="css/reveal.min.css">
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
+    <!-- Custom css -->
+    <link rel="stylesheet" href="css/custom.css">
+
 		<!-- For syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
@@ -45,17 +48,17 @@
 				<section>
 					<h1 class="first">Log the things!</h1>
 					<h3 class="first">Event-basierende, effiziente und skalierbare Datenaggregation mit fluentd</h3>
-        <aside class="notes" data-markdown>
-          - Herzlich Willkommen!
-          - Dachte ich erspare euch das übliche Meme
-          - Es gibt allerdings einen Vortrag, bei dem für jeden was dabei ist:
-            - Ein Business case
-            - Daten!
-            - Eine subjektive Sicht auf die Dinge
-            - Live-Demos
-            - Puppies und Kittens!
-            - Hoffentlich ein Takeaway
-        </aside>
+          <aside class="notes" data-markdown>
+            - Herzlich Willkommen!
+            - Dachte ich erspare euch das übliche Meme
+            - Es gibt allerdings einen Vortrag, bei dem für jeden was dabei ist:
+              - Ein Business case
+              - Daten!
+              - Eine subjektive Sicht auf die Dinge
+              - Live-Demos
+              - Puppies und Kittens!
+              - Hoffentlich ein Takeaway
+          </aside>
 				</section>
         <section>
           <section>
@@ -82,6 +85,7 @@
                 - Business-Vorhersagen
                 - Date-Warehousing/BI
                 - Div. andere Metriken
+            </aside>
           </section>
           <section>
             <h1>Zu was sollte uns das idealerweise führen?</h1>
@@ -92,6 +96,7 @@
                 - Bauchgefühle können aber nicht komplexe Systeme durchdringen!
               - Irgendwann muss man seine Entscheidungen, zum wohle der Firma und auch seiner Angestellten, auf Fakten basieren
               - Und das mündet idealerweise in ...
+            </aside>
           </section>
           <section>
             <h1>Data Driven Products!</h1>
@@ -101,6 +106,7 @@
               - Management Buy-Ins werden leichter
                 - Niemand kann so einfach gegen Zahlen und Fakten argumentieren
               - Zielgerichte Entwicklung, sowohl von Software als auch der Business-Seite, spart Zeit und damit Geld, außerdem Nerven, Lebensjahre und hilft durch klare Ziele Angestellte, und vor allem Entwickler, glücklich zu machen
+            </aside>
           </section>
           <section>
             <h1>Einfacher gesagt als getan</h1>
@@ -118,32 +124,112 @@
             <h1>Was ist fluentd?</h1>
             <aside class="notes" data-markdown>
               - Was genau ist also fluentd und wie kann es uns dabei helfen Data Driven Products zu entwickeln?
+            </aside>
+					</section>
+          <section>
+            <img src="img/fluentd-logo.png" alt="fluentd" />
+            <blockquote>
+              Fluentd allows you to unify data collection and consumption for a better use and understanding of data.
+            </blockquote>
+            <aside class="notes" data-markdown>
+              - Schamlos kopiert von fluentd.org, danke!
+              - Im Endeffekt: Daten zusammentragen und aggregieren um sie anschließend besser verstehen zu können
+              - Ein Dienst, der es einfach macht verteilte Daten und Events zu sammeln und anschließend weiter zu verarbeiten
+            </aside>
+          </section>
+          <section>
+            <h1>Moooment, das kenne ich irgendwo her</h1>
+            <aside class="notes" data-markdown>
+                - Yes! Es gibt bereits ein etabliertes Tool dafür, was ebenfalls aus der Logging-Ecke kommt
+            </aside>
+          </section>
+					<section>
+            <img src="img/elk-stack.jpg" alt="ELK Stack">
+            <ul class="reveal social elk">
+              <li><span style="font-size:2em;">E</span>lasticsearch</li>
+              <li><span style="font-size:2em;">L</span>ogstash</li>
+              <li><span style="font-size:2em;">K</span>ibana</li>
+            </ul>
+            <aside class="notes" data-markdown>
+              - Das ist es, wenn Leute vom ELK Stack sprechen
+                - Logs werden entweder direkt oder als Files von Logstash eingelesen
+                - In Elasticsearch indiziert und gespeichert
+                - Und anschließend über Kibana abgefragt
+              - Alle Komponenten sind entweder Teil oder werden stark geförtert durch das Elasticsearch Projekt
+            </aside>
+					</section>
+					<section data-background="img/kibana-4.png">
+            <h1 style="color:#000;">Kibana</h1>
+            <aside class="notes" data-markdown>
+              - http://www.elasticsearch.org/blog/kibana-4-beta-1-released/
+              - Aus dem offiziellen Elasticsearch Blog
+              - Graphen, Pie-Charts, Korrelationen, Alarme .. es ist möglich so ziemlich sämtliche Daten zu visualisieren und zusammenzutragen
+              - **Kibana spiel aber deswegen auch eine Rolle, weil es ein fester Bestandteil des Stacks sein kann, wenn man fluentd einsetzt!**
+            </aside>
 					</section>
 					<section>
-						<h2>Basement Level 1</h2>
-						<p>Press down or up to navigate.</p>
+            <h1>fluentd &#9825; Elasticsearch + Kibana</h1>
+            <aside class="notes" data-markdown>
+              - fluentd kann direkt im Logstash Format des Indexers schreiben, den auch Logstash verwendet!
+              - Ganz wichtig ist: Es geht hier nicht um schwarz und weiß, auch wenn die Präsentation das vermutet lässt, sondern um Alternativen
+            </aside>
 					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>Cornify</p>
-						<a class="test" href="http://cornify.com">
-							<img width="280" height="326" src="https://s3.amazonaws.com/hakim-static/reveal-js/cornify.gif" alt="Unicorn">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 3</h2>
-						<p>That's it, time to go back up.</p>
-						<a href="#/2" class="image">
-							<img width="178" height="238" src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="-webkit-transform: rotate(180deg);">
-						</a>
-					</section>
+          <section>
+            <h3>Direkte Integration!</h3>
+            <pre><code class="js" data-trim>
+&lt;match your_app.**&gt;
+  type elasticsearch
+  logstash_format true
+&lt;match&gt;
+            </code></pre>
+            <p>https://github.com/uken/fluent-plugin-elasticsearch</p>
+            <p>http://docs.fluentd.org/articles/free-alternative-to-splunk-by-fluentd</p>
+            <aside class="notes" data-markdown>
+              - Mit Hilfe von der skalierbaren Infrastruktur von fluentd einfach und schnell nach Elasticsearch schreiben, ohne Umwege
+              - Mit bestehenden Systemen vereinbar
+            </aside>  
+          </section>
 				</section>
-
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? No problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slid.es" target="_blank">http://slid.es</a>.
-					</p>
+          <section>
+            <h1>Cool, wie fange ich an?!</h1>
+            <aside class="notes" data-markdown>
+              - fluentd selbst zu installieren, den Server, der die Daten empfängt und eventuell weiterverarbeitet oder weiterleitet (oder persistiert) ist sehr einfach, wenn man bereits mit Ruby vertraut ist
+              - Selbst ohne Vorkenntnisse braucht es nur einen Ruby Interpreter und Rubygems (standardmäßig mitinstalliert
+            </aside>
+          </section>
+          <section>
+            <h1>Installation</h1>
+            <pre><code data-trim>
+gem install fluentd
+            </code></pre>
+            <h5>That's it!</h5>
+            <aside class="notes" data-markdown>
+              - Das ist es. Der Server ist installiert.
+              - Fluentd kennt ein interessantes Kommando, um eine lokale Instanz "zu starten"
+            </aside>
+          </section>
+          <section>
+            <h1>Erstes Setup</h1>
+            <pre><code data-trim>
+$ fluentd --setup pfad/zu/verzeichnis
+            </code></pre>
+            <p>Erstellt komplette Erstkonfiguration in Verzeichnis</p>
+            <aside class="notes" data-markdown>
+              - Schauen wir uns diese Konfiguration mal an ..
+            </aside>
+          </section>
+          <section>
+            <h1>Live Demo</h1>
+            <aside class="notes" data-markdown>
+              - Terminal öffnen
+              - `fluentd --setup verzeichnis` ausführen
+              - vim fluentd.conf
+              - Einzelne Punkte erklären
+                - Unterschied zwischen `source` und `match` erklären
+                - fluentd starten und einfaches cat Beispiel zeigen
+              </aside>
+          </section>
 				</section>
 
 				<section>
@@ -427,7 +513,7 @@ function linkify( selector ) {
 					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				  { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
 					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
